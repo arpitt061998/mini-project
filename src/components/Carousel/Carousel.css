@@ -1,0 +1,52 @@
+.d-none {
+  display: none;
+}
+
+.block {
+  display: block;
+}
+
+.carousel-img {
+  height: 400px;
+  width: 400px;
+  object-fit: contain;
+  user-select: none;
+}
+
+.carousel-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.btns{
+  cursor: pointer;
+}
+
+.photo-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.bullet-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.active-bullet{
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  border-color: gray;
+  padding: 4px;
+  margin: 4px;
+  background: gray;
+  cursor: pointer;
+}
+
+.active-bullet.active {
+  background-color: blue;
+  border-color: blue;
+}
