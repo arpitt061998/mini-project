@@ -30,7 +30,7 @@ const Carousel = () => {
     return () => {
       clearTimeout(timer);
     }
-  },[activeImageIndex]);
+  },[activeImageIndex,photos]);
 
   return !photos?.length ? (<div>Loading.....</div>) : (
     <>

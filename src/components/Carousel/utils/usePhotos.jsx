@@ -4,7 +4,6 @@ const usePhotos = () => {
   const UNSPLASH_API_KEY = "b_VrG6HDn7jMdtWRjrF0ymzFjiCvG7zi_-dLk_aepBo";
   const UNSPLASH_API_URL = "https://api.unsplash.com/photos/";
   const [photos,setPhotos] = useState([]);
-
   const getPhotos = async() => {
     const res = await fetch(`${UNSPLASH_API_URL}?client_id=${UNSPLASH_API_KEY}`);
     const data = await res.json();
