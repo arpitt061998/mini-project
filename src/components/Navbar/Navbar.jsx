@@ -11,7 +11,7 @@ const NavBar = () => {
           </Link>
         </li>
         <li>
-          <Link className="proress-bar-link">ProgressBar</Link>
+          <Link to = "progressbar" className="proress-bar-link">ProgressBar</Link>
         </li>
         <li><Link className="wallet-expense-link">Expense Tracker</Link></li>
         <li><Link className="notes-link">Notes</Link></li>

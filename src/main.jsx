@@ -6,6 +6,7 @@ import ErrorPage from './components/Errorpage';
 import App from './App';
 import Carousel from './components/Carousel/Carousel';
 import MainBody from './MainBody';
+import ProgressContainer from './components/ProgressBar/ProgressContainer';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: "carousel",
         element: <Carousel />,
+      },
+      {
+        path: "progressbar",
+        element: <ProgressContainer />,
       },
     ],
     errorElement: <ErrorPage />,
