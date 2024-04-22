@@ -7,3 +7,6 @@
 # implement HOC if possible
 # deploy on vercel
 # implement Lazy loading
+
+
+completed 2 projects on 21st April 2024
