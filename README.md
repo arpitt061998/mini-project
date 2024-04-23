@@ -7,6 +7,7 @@
 # implement HOC if possible
 # deploy on vercel
 # implement Lazy loading
+# adding 3 project of file explorer
 
 
 completed 2 projects on 21st April 2024
