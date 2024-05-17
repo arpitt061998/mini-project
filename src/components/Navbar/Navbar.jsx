@@ -13,7 +13,7 @@ const NavBar = () => {
         <li>
           <Link to = "progressbar" className="progress-bar-link">ProgressBar</Link>
         </li>
-        <li><Link to = "file/explorer" className="file-explorer-link">File Explorer</Link></li>
+        <li><Link to = "folder" className="file-explorer-link">File Explorer</Link></li>
         <li><Link className="wallet-expense-link">Expense Tracker</Link></li>
         <li><Link className="notes-link">Notes</Link></li>
         <li><Link className="infinite-scrolling-link">Infinte Scrolling</Link></li>
