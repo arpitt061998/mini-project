@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import "./folder.css";
 
-const FileExplorer = ({handleNode= () => {}, explorer}) => {
-  
+const FileExplorer = ({handleInsertNode= () => {}, handleDeleteNode = ()=> {},explorer}) => {
+  console.log("rendered");
   const [expand, setExpand] = useState(false);
   const [showInput, setShowInput] = useState({
     isVisible: false,
@@ -18,17 +18,21 @@ const FileExplorer = ({handleNode= () => {}, explorer}) => {
     })
   }
 
-  const deleteNode = (e) => {
+  const handleDeleteOperation = (e) => {
     e.stopPropagation();
+    handleDeleteNode(explorer.id);
+    setShowInput({...showInput,isVisible: false})
   }
 
   const onAddFolder = (e) => {
     if(e.keyCode === 13 && e.target.value){
-      handleNode(explorer.id, e.target.value, showInput.isFolder)
+      handleInsertNode(explorer.id, e.target.value, showInput.isFolder)
       setShowInput({...showInput, isVisible:false})
     }
   }
-
+  if(explorer===null){
+    return (<div>No Folder Found...</div>)
+  }
   if(explorer.isFolder){
   return (
     <div>
@@ -37,7 +41,7 @@ const FileExplorer = ({handleNode= () => {}, explorer}) => {
         <div>
           <button onClick={(e) => {handleNewFolder(e,true)}}>Folder +</button>
           <button onClick={(e) => {handleNewFolder(e,false)}}>File +</button>
-          <button onClick={(e)=> {deleteNode(e)}}>Delete </button>
+          <button onClick={(e)=> {handleDeleteOperation(e)}}>Delete </button>
         </div>
       </div>
       <div style={{display: expand ? "block" : "none", paddingLeft:"25px"}}>
@@ -54,7 +58,7 @@ const FileExplorer = ({handleNode= () => {}, explorer}) => {
           </div>
         }        {explorer.items.map((exp) => {
           return (
-            <FileExplorer handleNode = {handleNode} explorer={exp} key={exp.id}/>
+            <FileExplorer handleInsertNode = {handleInsertNode} handleDeleteNode = {handleDeleteNode} explorer={exp} key={exp.id}/>
           )
         })}
       </div>
@@ -65,4 +69,4 @@ const FileExplorer = ({handleNode= () => {}, explorer}) => {
   }
 }
 
-export default FileExplorer
+export default FileExplorer;

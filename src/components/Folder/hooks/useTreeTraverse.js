@@ -1,6 +1,5 @@
 
 const useTreeTraverse = () => {
-
   const insertNode = (tree, folderId, itemName, isFolder) => {
     if(tree.id === folderId && tree.isFolder){
       tree.items.unshift({
@@ -17,7 +16,21 @@ const useTreeTraverse = () => {
     })
     return { ...tree, items: subTree };
   }
-  const deleteNode = () => {}; // Do it Yourself
+  const deleteNode = (tree, id) => {
+    if (tree.id === id) {
+      return null;
+    }
+  
+    const updatedItems = tree.items.map((item) => {
+      const updatedItem = deleteNode(item, id);
+      return updatedItem ? updatedItem : null;
+    });
+  
+    return {
+      ...tree,
+      items: updatedItems.filter((item) => item !== null),
+    };
+  };
 
   const renameNode = () => {}; // Do it Yourself
   return {insertNode, deleteNode, renameNode};
