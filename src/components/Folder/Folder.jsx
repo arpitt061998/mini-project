@@ -6,7 +6,7 @@ import useTreeTraverse from './hooks/useTreeTraverse';
 const Folder = () => {
   const [explorerData, setExplorerData] = useState(explorer);
 
-  const { insertNode, deleteNode } = useTreeTraverse();
+  const { insertNode, deleteNode, renameNode } = useTreeTraverse();
 
   const handleInsertNode = (id, item, isFolder) => {
     const finalTree = insertNode(explorerData, id, item, isFolder);
@@ -18,9 +18,14 @@ const Folder = () => {
     setExplorerData(finalTree)
   }
 
+  const handleRenameNode = () => {
+    const finalTree = renameNode(explorerData, id, item);
+    setExplorerData(finalTree);
+  }
+
   return (
     <div>
-      <FileExplorer handleInsertNode = {handleInsertNode} handleDeleteNode = {handleDeleteNode} explorer={explorerData}/>
+      <FileExplorer handleInsertNode = {handleInsertNode} handleDeleteNode = {handleDeleteNode} handleRenameNode = {handleRenameNode} explorer={explorerData}/>
     </div>
   )
 }

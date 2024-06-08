@@ -32,7 +32,20 @@ const useTreeTraverse = () => {
     };
   };
 
-  const renameNode = () => {}; // Do it Yourself
+  const renameNode = (tree, id, newName) => {
+    if (tree.id === id) {
+      return { ...tree, name: newName };
+    }
+  
+    const updatedItems = tree.items.map((item) => {
+      return renameNode(item, id, newName);
+    });
+  
+    return {
+      ...tree,
+      items: updatedItems,
+    };
+  };
   return {insertNode, deleteNode, renameNode};
 }
 

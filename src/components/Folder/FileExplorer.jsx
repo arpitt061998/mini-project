@@ -18,6 +18,15 @@ const FileExplorer = ({handleInsertNode= () => {}, handleDeleteNode = ()=> {},ex
     })
   }
 
+  const handleRenameOperation = (e, isFolder) => {
+    e.stopPropagation();
+    setExpand(true)
+    setShowInput({
+      isVisible: true,
+      isFolder
+    })
+  }
+
   const handleDeleteOperation = (e) => {
     e.stopPropagation();
     handleDeleteNode(explorer.id);
@@ -30,6 +39,7 @@ const FileExplorer = ({handleInsertNode= () => {}, handleDeleteNode = ()=> {},ex
       setShowInput({...showInput, isVisible:false})
     }
   }
+
   if(explorer===null){
     return (<div>No Folder Found...</div>)
   }
@@ -42,6 +52,7 @@ const FileExplorer = ({handleInsertNode= () => {}, handleDeleteNode = ()=> {},ex
           <button onClick={(e) => {handleNewFolder(e,true)}}>Folder +</button>
           <button onClick={(e) => {handleNewFolder(e,false)}}>File +</button>
           <button onClick={(e)=> {handleDeleteOperation(e)}}>Delete </button>
+          <button onClick={(e)=> {handleRenameOperation(e)}}>Delete </button>
         </div>
       </div>
       <div style={{display: expand ? "block" : "none", paddingLeft:"25px"}}>
@@ -56,10 +67,10 @@ const FileExplorer = ({handleInsertNode= () => {}, handleDeleteNode = ()=> {},ex
               className='inputContainer__input'
               autoFocus/>
           </div>
-        }        {explorer.items.map((exp) => {
-          return (
-            <FileExplorer handleInsertNode = {handleInsertNode} handleDeleteNode = {handleDeleteNode} explorer={exp} key={exp.id}/>
-          )
+        } {explorer.items.map((exp) => {
+            return (
+              <FileExplorer handleInsertNode = {handleInsertNode} handleDeleteNode = {handleDeleteNode} explorer={exp} key={exp.id}/>
+            )
         })}
       </div>
     </div>

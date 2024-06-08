@@ -19,7 +19,7 @@ const NavBar = () => {
         <li><Link className="infinite-scrolling-link">Infinte Scrolling</Link></li>
         <li><Link className="password-generator-link">Password Generator</Link></li>
         <li><Link className="countdown-link">Countdown</Link></li>
-        <li><Link className="tic-tac-toe-link">Tic Tac Toe</Link></li>
+        <li><Link to = "/tic-tac-toe" className="tic-tac-toe-link">Tic Tac Toe</Link></li>
         <li>
           <Link className="typeahead-search-link">Typeahead Search</Link>
         </li>

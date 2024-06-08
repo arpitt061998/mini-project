@@ -8,6 +8,7 @@ import Carousel from './components/Carousel/Carousel';
 import MainBody from './MainBody';
 import ProgressContainer from './components/ProgressBar/ProgressContainer';
 import Folder from './components/Folder/Folder';
+import Tictactoe from './components/TicTacToe/Tictactoe';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "folder",
         element: <Folder/>
+      },
+      {
+        path: "tic-tac-toe",
+        element: <Tictactoe size={4}/>
       }
     ],
     errorElement: <ErrorPage />,
