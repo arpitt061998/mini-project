@@ -9,6 +9,7 @@ import MainBody from './MainBody';
 import ProgressContainer from './components/ProgressBar/ProgressContainer';
 import Folder from './components/Folder/Folder';
 import Tictactoe from './components/TicTacToe/Tictactoe';
+import Search from './components/TypeaheadSearch/Search';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "tic-tac-toe",
         element: <Tictactoe size={4}/>
+      },
+      {
+        path: "search",
+        element: <Search/>
       }
     ],
     errorElement: <ErrorPage />,

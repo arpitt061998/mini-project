@@ -21,7 +21,7 @@ const NavBar = () => {
         <li><Link className="countdown-link">Countdown</Link></li>
         <li><Link to = "/tic-tac-toe" className="tic-tac-toe-link">Tic Tac Toe</Link></li>
         <li>
-          <Link className="typeahead-search-link">Typeahead Search</Link>
+          <Link to = "/search" className="typeahead-search-link">Typeahead Search</Link>
         </li>
       </ul>
     </div>
