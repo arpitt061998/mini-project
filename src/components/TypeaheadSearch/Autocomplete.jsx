@@ -1,3 +1,5 @@
+// implement functionality of useCache and preventFromXss attack functionalityin future
+
 import { useEffect, useState,useCallback } from "react"
 import SuggestionList from "./SuggestionList";
 import useDebounce from "./hooks/useDebounce";
